@@ -1,12 +1,15 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
+import Home from "./components/Home";
 
 function App() {
+  const [first, setfirst] = useState<string>("");
+
   return (
-    <div>
-      <h1>Hola Mundo</h1>
-    </div>
-  )
+    <>
+      <Home></Home>
+    </>
+  );
 }
 
-export default App
+export default App;
