@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Canvas from "./Canvas";
 import Menu from "./Menu";
+import {Movie} from '../interfaces/movieInterface';
 
 const Home = () => {
   const API_LINK: string = "https://api.themoviedb.org/3";
@@ -11,7 +12,7 @@ const Home = () => {
   const [switchMenu, setSwitchMenu] = useState<boolean>(
     window.screen.width >= 460
   );
-  const obj = {
+  const obj:Movie = {
     adult: false,
     backdrop_path: "/22z44LPkMyf5nyyXvv8qQLsbom.jpg",
     genre_ids: [27, 9648, 53],
@@ -51,10 +52,8 @@ const Home = () => {
       >
         <span className="material-symbols-outlined text-2xl">menu</span>
       </div>
-
       <Menu switchMenu={switchMenu}></Menu>
-
-      <div className="flex-grow p-3 mt-12">Canvas</div>
+      <Canvas></Canvas>
     </div>
   );
 };
